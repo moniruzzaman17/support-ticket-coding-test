@@ -34,6 +34,7 @@ Route::group(['middleware' => ['admin.auth']], function () {
 
 Route::group(['middleware' => ['customer.auth']], function () {
     Route::get('/tickets', [TicketController::class, 'showTickets'])->name('tickets.list');
+    Route::get('/ticket-details/{ticket_id}', [TicketController::class, 'viewTicket'])->name('tickets.show');
 });
 
 // ticket route

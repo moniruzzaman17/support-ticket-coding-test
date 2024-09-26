@@ -51,7 +51,7 @@ class TicketController extends Controller
                     return $status;
                 })
                 ->addColumn('action', function($row){
-                    $btn = '<a href="tickets/' . $row->id . '" class="btn btn-sm btn-primary">View</a>';
+                    $btn = '<a href="' . route('tickets.show', ['ticket_id'=>$row->id]) . '" class="btn btn-sm btn-primary">View</a>';
                     return $btn;
                 })
                 ->rawColumns(['action','status'])
@@ -121,5 +121,10 @@ class TicketController extends Controller
         }
         $ticketNumber = $ticketPrefix . str_pad($newTicketNumber, 3, '0', STR_PAD_LEFT);
         return $ticketNumber;
+    }
+    
+    public function viewTicket($ticket_id) {
+        $ticket = Ticket::with('response', 'response.user')->where('id', $ticket_id)->first();
+        return view('frontend.ticket.view-ticket', compact('ticket'));
     }
 }

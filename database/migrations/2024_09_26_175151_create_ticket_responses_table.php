@@ -16,9 +16,11 @@ return new class extends Migration
             $table->unsignedBigInteger('ticket_id');
             $table->longText('message');
             $table->string('attachment')->nullable();
+            $table->unsignedBigInteger('response_from')->nullable();
             $table->timestamps();
 
             $table->foreign('ticket_id')->references('id')->on('tickets')->onDelete('cascade');
+            $table->foreign('response_from')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
