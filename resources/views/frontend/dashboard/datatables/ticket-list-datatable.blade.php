@@ -28,11 +28,11 @@
             },
             columns: [
                 { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
-                { data: 'ticket_no', name: 'ticket_no' },
-                { data: 'category_name', name: 'category_name' },
+                { data: 'ticket_number', name: 'ticket_number' },
+                { data: 'category', name: 'category' },
                 { data: 'subject', name: 'subject' },
                 { data: 'status', name: 'status' },
-                { data: 'updated_at', name: 'updated_at' },
+                { data: 'last_update', name: 'last_update' },
                 { data: 'action', name: 'action', orderable: false, searchable: false }
             ],
             lengthMenu: [

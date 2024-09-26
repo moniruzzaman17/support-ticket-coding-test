@@ -16,6 +16,8 @@ class Ticket extends Model
         'priority',
         'message',
         'attachments',
+        'ticket_number',
+        'admin_id',
     ];
 
     public function customer()
