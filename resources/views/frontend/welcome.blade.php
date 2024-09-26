@@ -1,4 +1,9 @@
 @extends('frontend.layouts.app')
 @section('content')
-@include('frontend.auth.login')
+    @auth
+        @include('frontend.dashboard.dashboard')
+    @endauth
+    @guest
+        @include('frontend.auth.login')
+    @endguest
 @endsection

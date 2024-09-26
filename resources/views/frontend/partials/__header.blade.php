@@ -12,7 +12,7 @@
             <div class="collapse navbar-collapse justify-content-end text-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href="" class="btn btn-outline-success"><i class="fas fa-home"></i>&nbsp;Home</a>
+                        <a href="{{ route('index') }}" class="btn btn-outline-success"><i class="fas fa-home"></i>&nbsp;Home</a>
                     </li>
                     @guest
                     <li class="nav-item ms-2 ms-md-2 mt-2 mt-md-0">

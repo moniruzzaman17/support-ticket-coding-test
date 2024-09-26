@@ -118,3 +118,10 @@ a {
   color: unset;
 }
 /* end of login page  */
+
+/* dashboard  */
+.accordion-button:not(.collapsed) {
+    background-color: #71BF44;
+    color: black;
+}
+/* end of dashboard */
