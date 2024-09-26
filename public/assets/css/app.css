@@ -1,0 +1,118 @@
+.navbar-wrapper .navbar-brand {
+    width: 190px;
+}
+
+.navbar-wrapper .navbar {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+  }
+
+/* login page css  */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: "Roboto", sans-serif;
+  color: #8a8a8a;
+}
+
+.brand {
+  color: #e3586a;
+  margin-top: 1em;
+}
+
+.login__main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+}
+
+.login__header {
+  text-align: center;
+}
+
+.login__header > h1 {
+  font-weight: 400;
+  color: #333;
+}
+
+.login-form {
+  display: grid;
+  grid-gap: 0.8em;
+  border-radius: 2px;
+  margin-top: 2em;
+}
+
+.login-form__row {
+  display: flex;
+  flex-direction: row;
+}
+
+.login-form__input-group {
+  display: flex;
+  text-align: initial;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 0.4em 0.5em;
+}
+
+.login-form__input-group > label {
+  font-size: 0.7em;
+  margin-bottom: 0.5em;
+}
+
+input[type="checkbox"] {
+  color: red;
+}
+
+.login-form__text-input {
+  width: 100%;
+  all: unset;
+}
+
+.login-form__row--far {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form__submit, .register-form__submit {
+  outline: unset;
+  border: unset;
+  color: white;
+  background: #71BF44;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  border-radius: 2px;
+  padding: 1em 0;
+  margin: 1em 0;
+}
+
+.login-form__submit:hover, .register-form__submit:hover {
+    color: #fff;
+    background: #198754;
+  }
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+/* end of login page  */
