@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
+            $table->string('ticket_number')->unique();
             $table->unsignedBigInteger('customer_id')->nullable();
+            $table->unsignedBigInteger('admin_id')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->string('subject');
             $table->enum('priority', ['low', 'medium', 'high']);
@@ -23,6 +25,7 @@ return new class extends Migration
             $table->timestamps();
             
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->foreign('admin_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade'); 
         });
     }

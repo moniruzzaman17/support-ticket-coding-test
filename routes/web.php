@@ -18,18 +18,20 @@ use App\Http\Controllers\Frontend\Ticket\TicketController;
 
 
 Route::get('/', [WelcomeController::class, 'index'])->name('index');
+
 Route::get('/auth/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/auth/register', [AuthController::class, 'register']);
+
 Route::get('/open-ticket', [TicketController::class, 'showNewTicketForm'])->name('open.ticket');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::group(['middleware' => ['admin']], function () {
+Route::group(['middleware' => ['admin.auth']], function () {
     // Admin routes
 });
 
-Route::group(['middleware' => ['customer']], function () {
-    // Customer routes
+Route::group(['middleware' => ['customer.auth']], function () {
+    Route::get('/tickets', [TicketController::class, 'showTickets'])->name('tickets.list');
 });
 
 // ticket route

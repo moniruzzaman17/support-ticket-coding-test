@@ -24,6 +24,10 @@
     <!-- Toastr -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     
+    <link href="{{ asset('public/admin/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.1/css/buttons.dataTables.min.css" />
+
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 </head>
 <body>
@@ -44,6 +48,9 @@
     <script>
             CKEDITOR.replace('editor');
     </script>
+    
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
     @stack('scripts')
 </body>
 </html>

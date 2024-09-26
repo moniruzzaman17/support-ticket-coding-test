@@ -1,3 +1,38 @@
+
+/* Custom CSS for datatable */
+.dt-buttons {
+  text-align: center;
+}
+
+.dataTable .dtr-details {
+  width: 100% !important;
+}
+
+.dataTable td.dt-body-center {
+  text-align: center;
+}
+
+.dataTables_filter label {
+  width: 100%;
+}
+
+.dataTables_filter input {
+  border: 1px solid #e4e6ef;
+}
+
+.dataTables_filter .input-group{
+  flex-wrap: nowrap!important;
+  margin-bottom: 10px;
+}
+.dataTables_empty{
+  text-align: center;
+}
+.dataTables_filter input[type='search']{
+  width: 100%!important;
+}
+
+/* end CSS for datatable */
+
 .navbar-wrapper .navbar-brand {
     width: 190px;
 }
@@ -12,6 +47,13 @@
   }
 #cke_notifications_area_editor{
     display: none!important;
+}
+
+thead {
+  background-color: #F2F2F2;
+}
+table thead tr th {
+  background-color: #F2F2F2!important;
 }
 /* login page css  */
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");

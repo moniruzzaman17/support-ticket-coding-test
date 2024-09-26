@@ -40,6 +40,7 @@
                     </div>
                 </div>
             </div>
+            @include('frontend.dashboard.datatables.ticket-list-datatable')
         </div>
     </div>
 </div>
