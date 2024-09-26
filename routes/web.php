@@ -21,4 +21,12 @@ Route::get('/', [WelcomeController::class, 'index'])->name('index');
 Route::get('/auth/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::get('/open-ticket', [TicketController::class, 'showNewTicketForm'])->name('open.ticket');
 
+Route::group(['middleware' => ['admin']], function () {
+    // Admin routes
+});
+
+Route::group(['middleware' => ['customer']], function () {
+    // Customer routes
+});
+
 // ticket route
