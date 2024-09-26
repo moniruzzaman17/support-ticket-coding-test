@@ -44,5 +44,6 @@
     <script>
             CKEDITOR.replace('editor');
     </script>
+    @stack('scripts')
 </body>
 </html>

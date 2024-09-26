@@ -121,7 +121,61 @@ a {
 
 /* dashboard  */
 .accordion-button:not(.collapsed) {
-    background-color: #71BF44;
+    background-color: #f2f2f2;
     color: black;
+}
+.infoBox {
+  display: block;
+  position: relative;
+  padding: 12px 20px;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ccc;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+.infoBox:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+.infoBox .stat {
+  margin-top: 20px;
+  font-size: 40px;
+  line-height: 1;
+}
+.infoBox .title {
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.infoBox .highlight {
+  margin-top: 4px;
+  height: 2px;
+  border-radius: 2px;
+}
+.infoBox i {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 55px;
+  line-height: 1;
+  color: #ccc;
+  transition: all .3s ease;
+}
+.no-gutters>.col, .no-gutters>[class*=col-] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.bg-color-blue {
+  background-color: #5bc0de;
+}
+.bg-color-green {
+  background-color: #5cb85c;
+}
+.bg-color-red {
+  background-color: #d9534f;
+}
+.bg-color-gold {
+  background-color: #f0ad4e;
 }
 /* end of dashboard */

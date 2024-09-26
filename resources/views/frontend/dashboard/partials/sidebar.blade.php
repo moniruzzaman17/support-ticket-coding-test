@@ -3,12 +3,13 @@
     <div class="accordion-item">
       <h2 id="singleHeadingFirst" class="accordion-header">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#customerInfo" aria-expanded="true" aria-controls="customerInfo">
-            <i class="fas fa-user"></i> &nbsp;customer name
+            <i class="fas fa-user"></i> &nbsp; {{ Auth::guard('customer')->user()->name }}
         </button>
       </h2>
       <div id="customerInfo" class="accordion-collapse collapse show" aria-labelledby="singleHeadingFirst">
         <div class="accordion-body">
-          Overview of the basic fundamentals of robot kinesiology, including rotational motion, laws of thermodynamics, space, time, and momentum. Students will learn to analyze and explain workings and gesticulations, identify and describe metals and fluids at rest and in motion, and explain the impact that the laws of gravity have on different forms of energy.
+          <p class="mb-0">Name: {{ Auth::guard('customer')->user()->name }}</p>
+          <p class="mb-0">Email: {{ Auth::guard('customer')->user()->email }}</p>
         </div>
       </div>
     </div>

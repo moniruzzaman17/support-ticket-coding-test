@@ -14,14 +14,14 @@
                     <li class="nav-item">
                         <a href="{{ route('index') }}" class="btn btn-outline-success"><i class="fas fa-home"></i>&nbsp;Home</a>
                     </li>
-                    @guest
+                    @guest('customer')
                     <li class="nav-item ms-2 ms-md-2 mt-2 mt-md-0">
                         <a href="{{ route('open.ticket') }}" class="btn btn-outline-success"><i class="fas fa-plus"></i>&nbsp;New Ticket</a>
                     </li>
                     @endguest
-                    @auth
+                    @auth('customer')
                     <li class="nav-item ms-md-2 mt-2 mt-md-0">
-                        <form id="logout-form" action="" method="POST" style="display: none;">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                         <a href="#" class="btn btn-outline-success" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
