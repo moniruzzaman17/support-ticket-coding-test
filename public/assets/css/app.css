@@ -10,7 +10,9 @@
     content:" *";
     color: red;
   }
-
+#cke_notifications_area_editor{
+    display: none!important;
+}
 /* login page css  */
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Netcoden Support Center</title>
-    
+
     <link rel="icon" href="https://netcoden.com/wp-content/uploads/2020/06/favicon1-150x150.png" sizes="32x32" />
     <link rel="icon" href="https://netcoden.com/wp-content/uploads/2020/06/favicon1.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="https://netcoden.com/wp-content/uploads/2020/06/favicon1.png" />
@@ -39,6 +39,10 @@
         "progressBar": true,
         "positionClass": "toast-top-right"
     };
+    </script>
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <script>
+            CKEDITOR.replace('editor');
     </script>
 </body>
 </html>

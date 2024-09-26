@@ -16,10 +16,7 @@
                     </li>
                     @guest
                     <li class="nav-item ms-2 ms-md-2 mt-2 mt-md-0">
-                        <a href="" class="btn btn-outline-success"><i class="fas fa-plus"></i>&nbsp;New Ticket</a>
-                    </li>
-                    <li class="nav-item ms-2 ms-md-2 mt-2 mt-md-0">
-                        <a href="" class="btn btn-outline-success"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
+                        <a href="{{ route('open.ticket') }}" class="btn btn-outline-success"><i class="fas fa-plus"></i>&nbsp;New Ticket</a>
                     </li>
                     @endguest
                     @auth

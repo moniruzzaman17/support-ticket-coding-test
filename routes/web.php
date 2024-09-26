@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\Frontend\Auth\AuthController;
+use App\Http\Controllers\Frontend\Ticket\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,6 @@ use App\Http\Controllers\Frontend\Auth\AuthController;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('index');
 Route::get('/auth/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::get('/open-ticket', [TicketController::class, 'showNewTicketForm'])->name('open.ticket');
+
+// ticket route
