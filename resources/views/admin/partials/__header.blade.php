@@ -16,7 +16,7 @@
                     </li>
                     @auth('administrator')
                     <li class="nav-item ms-md-2 mt-2 mt-md-0">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                         <a href="#" class="btn btn-outline-success" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

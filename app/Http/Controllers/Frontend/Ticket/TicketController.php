@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend\Ticket;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
+use App\Models\TicketResponse;
 use App\Models\Customer;
 use App\Models\Category;
 use Yajra\DataTables\DataTables;
@@ -126,5 +127,19 @@ class TicketController extends Controller
     public function viewTicket($ticket_id) {
         $ticket = Ticket::with('response', 'response.user')->where('id', $ticket_id)->first();
         return view('frontend.ticket.view-ticket', compact('ticket'));
+    } 
+
+    public function storeResponse(Request $request) {
+        $request->validate([
+            'ticket_id' => 'required|exists:tickets,id',
+            'message' => 'required',
+        ]);
+    
+        TicketResponse::create([
+            'ticket_id' => $request->ticket_id,
+            'message' => $request->message,
+        ]);
+    
+        return redirect()->back()->with('success', 'Response submitted successfully.');
     }
 }

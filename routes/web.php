@@ -28,11 +28,12 @@ Route::get('/open-ticket', [TicketController::class, 'showNewTicketForm'])->name
 Route::post('/tickets/store', [TicketController::class, 'storeNewTicket'])->name('tickets.store');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['customer.auth']], function () {
     Route::get('/tickets', [TicketController::class, 'showTickets'])->name('tickets.list');
     Route::get('/ticket-details/{ticket_id}', [TicketController::class, 'viewTicket'])->name('tickets.show');
+    Route::post('/tickets/response', [TicketController::class, 'storeResponse'])->name('tickets.storeResponse');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 // admin route 
@@ -40,7 +41,7 @@ Route::group(['middleware' => ['customer.auth']], function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login');
-    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
     Route::group(['middleware' => ['admin.auth']], function () {
         Route::post('/tickets/list', [AdminController::class, 'showTickets'])->name('admintickets.list');
         Route::get('/ticket-details/{ticket_id}', [AdminController::class, 'viewTicket'])->name('admintickets.show');

@@ -32,18 +32,31 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="card-title w-100 d-flex justify-content-between">
-                        <span>Response From {{ $response->user->name??"Self" }}</span>
+                        <span>Response From {{ $response->user->name??"Myself" }}</span>
                         <i style="font-size: 11px;">{{ $response->created_at->format('Y-m-d H:i:s A') }}</i>
                     </h5>
                     <hr>
                     <div class="mail-body w-100 mt-4">
-                        {!! $ticket->message !!}
+                        {!! $response->message !!}
                     </div>
                 </div>
             </div>
            @empty
                
            @endforelse
+           @if($ticket->status !== "closed")
+           <form action="{{ route('tickets.storeResponse') }}" method="POST" class="mt-4" id="responseForm">
+               @csrf
+               <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
+               <div class="mb-3">
+                   <label for="message" class="form-label fw-bold">Write your response</label>
+                   <textarea id="editor" class="form-control" name="message" rows="12" required>{!! old('message') !!}</textarea>
+               </div>
+               <div class="border-top pt-3 clearfix">
+                 <button type="submit" class="btn btn-primary float-end">Reply</button>
+               </div>
+           </form>
+           @endif
         </div>
     </div>
 </div>
