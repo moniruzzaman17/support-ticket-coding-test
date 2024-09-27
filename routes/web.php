@@ -45,6 +45,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/tickets/list', [AdminController::class, 'showTickets'])->name('admintickets.list');
         Route::get('/ticket-details/{ticket_id}', [AdminController::class, 'viewTicket'])->name('admintickets.show');
         Route::post('/tickets/response', [AdminController::class, 'storeResponse'])->name('admintickets.storeResponse');
-
+        
+        Route::post('/tickets/update-status', [AdminController::class, 'updateStatus'])->name('admintickets.updateStatus');
     });
 });

@@ -2,7 +2,7 @@
   <div class="modal fade" id="statusChangeModal" tabindex="-1" role="dialog" aria-labelledby="statusChangeModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admintickets.updateStatus') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-header">
             <h5 class="modal-title" id="statusChangeModalTitle">Change Status</h5>

@@ -11,6 +11,8 @@ use App\Models\Category;
 use App\Models\Ticket;
 use App\Models\TicketResponse;
 use Yajra\DataTables\DataTables;
+use App\Mail\TicketClosed;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -101,5 +103,24 @@ class AdminController extends Controller
     
         return redirect()->back()->with('success', 'Response submitted successfully.');
     }
-    
+
+    public function updateStatus(Request $request)
+    {
+        $request->validate([
+            'ticket_id' => 'required|exists:tickets,id',
+            'status' => 'required|in:open,in_progress,closed',
+        ]);
+
+        $ticket = Ticket::with('customer')->findOrFail($request->ticket_id);
+
+        $ticket->status = $request->status;
+        $ticket->save();
+
+        if ($ticket->status == 'closed') {
+            $customerEmail = $ticket->customer->email;
+            Mail::to($customerEmail)->send(new TicketClosed($ticket));
+        }
+        
+        return redirect()->back()->with('success', 'Ticket status updated successfully.');
+    }
 }

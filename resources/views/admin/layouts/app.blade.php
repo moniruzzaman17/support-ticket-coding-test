@@ -105,9 +105,15 @@
                 { value: 'closed', label: 'Closed' }
             ];
 
-            var filteredOptions = statusOptions.filter(function(option) {
-                return option.value !== currentStatus;
-            });
+            var filteredOptions = [];
+
+            if (currentStatus === 'open') {
+                filteredOptions = statusOptions.filter(option => option.value !== 'open');
+            } else if (currentStatus === 'in_progress') {
+                filteredOptions = statusOptions.filter(option => option.value == 'closed');
+            } else if (currentStatus === 'closed') {
+                filteredOptions = statusOptions.filter(option => option.value == 'closed');
+            }
 
             $('#status').empty();
 
