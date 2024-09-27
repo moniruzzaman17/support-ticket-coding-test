@@ -221,3 +221,8 @@ a {
   background-color: #f0ad4e;
 }
 /* end of dashboard */
+
+/* admin css  */
+.statusBar{
+  cursor: pointer;
+}

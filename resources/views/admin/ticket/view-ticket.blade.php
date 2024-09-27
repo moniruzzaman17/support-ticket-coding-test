@@ -12,11 +12,11 @@
                     <span>View Ticket #{{ $ticket->ticket_number }}</span>
                     <span class="badge bg-info"><i class="fas fa-info-circle"></i>&nbsp;{{ $ticket->priority }}</span>
                     @if($ticket->status == "open")
-                        <span class="badge bg-success">Open</span>
+                        <span class="badge bg-success statusBar" data="{{ $ticket->status }}" data-id="{{ $ticket->id }}">Open</span>
                     @elseif ($ticket->status == "in_progress")
-                    <span class="badge bg-info">In-Progress</span>
+                    <span class="badge bg-info statusBar" data="{{ $ticket->status }}" data-id="{{ $ticket->id }}">In-Progress</span>
                     @else
-                    <span class="badge bg-secondary">Closed</span>
+                    <span class="badge bg-secondary statusBar" data="{{ $ticket->status }}" data-id="{{ $ticket->id }}">Closed</span>
                     @endif
                 </h5>
                 <hr>

@@ -63,13 +63,13 @@ class AdminController extends Controller
                 })
                 ->editColumn('status', function ($ticket) {
                     if ($ticket->status == "open") {
-                        $status = '<span class="badge bg-success">Open</span>';
+                        $status = '<span class="badge bg-success statusBar" data="'.$ticket->status .'" data-id="'. $ticket->id .'">Open</span>';
                     }
                     elseif ($ticket->status == "in_progress") {
-                        $status = '<span class="badge bg-primary">In Progress</span>';
+                        $status = '<span class="badge bg-primary statusBar" data="'.$ticket->status .'" data-id="'. $ticket->id .'">In Progress</span>';
                     }
                     else {
-                        $status = '<span class="badge bg-secondary">Closed</span>';
+                        $status = '<span class="badge bg-secondary statusBar" data="'.$ticket->status .'" data-id="'. $ticket->id .'">Closed</span>';
                     }
                     return $status;
                 })

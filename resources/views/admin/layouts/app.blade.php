@@ -90,5 +90,33 @@
             </script>
         @endforeach
     @endif
+    
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.statusBar', function() {
+            var ticketID = $(this).attr('data-id');
+            var currentStatus = $(this).attr('data');
+
+            $('#ticketID').val(ticketID);
+
+            var statusOptions = [
+                { value: 'open', label: 'Open' },
+                { value: 'in_progress', label: 'In Progress' },
+                { value: 'closed', label: 'Closed' }
+            ];
+
+            var filteredOptions = statusOptions.filter(function(option) {
+                return option.value !== currentStatus;
+            });
+
+            $('#status').empty();
+
+            filteredOptions.forEach(function(option) {
+                $('#status').append(new Option(option.label, option.value));
+            });
+            $('#statusChangeModal').modal('show');
+        });
+    });
+</script>
 </body>
 </html>

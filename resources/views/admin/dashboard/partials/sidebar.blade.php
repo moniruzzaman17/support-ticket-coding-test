@@ -39,7 +39,7 @@
         <div class="accordion-body">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="{{ route('index') }}" class="nav-link text-dark" aria-current="page">
+                    <a href="{{ route('admin.index') }}" class="nav-link text-dark" aria-current="page">
                         <i class="fas fa-home"></i> Home
                     </a>
                 </li>
@@ -53,3 +53,4 @@
       </div>
     </div>
 </div>
+@include('admin.ticket.partials.status-change-modal')
