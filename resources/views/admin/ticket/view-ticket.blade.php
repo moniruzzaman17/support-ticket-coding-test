@@ -5,7 +5,7 @@
         <div class="col-12 col-md-4">
             @include('admin.dashboard.partials.sidebar')
         </div>
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-8 mb-4">
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title w-100 d-flex justify-content-between">
@@ -47,18 +47,20 @@
            @empty
                
            @endforelse
-            <form action="{{ route('admintickets.storeResponse') }}" method="POST" class="mt-4" id="responseForm">
-                @csrf
-                <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
-                <input type="hidden" name="response_from" value="{{ Auth::guard('administrator')->user()->id }}">
-                <div class="mb-3">
-                    <label for="message" class="form-label fw-bold">Write your response</label>
-                    <textarea id="editor" class="form-control" name="message" rows="12" required>{!! old('message') !!}</textarea>
-                </div>
-                <div class="border-top pt-3 clearfix">
-                  <button type="submit" class="btn btn-primary float-end">Reply</button>
-                </div>
-            </form>
+           @if($ticket->status !== "closed")
+           <form action="{{ route('admintickets.storeResponse') }}" method="POST" class="mt-4" id="responseForm">
+               @csrf
+               <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
+               <input type="hidden" name="response_from" value="{{ Auth::guard('administrator')->user()->id }}">
+               <div class="mb-3">
+                   <label for="message" class="form-label fw-bold">Write your response</label>
+                   <textarea id="editor" class="form-control" name="message" rows="12" required>{!! old('message') !!}</textarea>
+               </div>
+               <div class="border-top pt-3 clearfix">
+                 <button type="submit" class="btn btn-primary float-end">Reply</button>
+               </div>
+           </form>
+           @endif
         </div>
     </div>
 </div>
