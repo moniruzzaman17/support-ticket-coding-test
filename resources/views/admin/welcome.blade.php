@@ -1,0 +1,9 @@
+@extends('admin.layouts.app')
+@section('content')
+    @auth('administrator')
+        @include('admin.dashboard.dashboard')
+    @endauth
+    @guest('administrator')
+        @include('admin.auth.login')
+    @endguest
+@endsection

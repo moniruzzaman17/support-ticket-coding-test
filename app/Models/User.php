@@ -45,6 +45,6 @@ class User extends Authenticatable
 
     public function response()
     {
-        return $this->hasMany(TicketResponse::class);
+        return $this->hasMany(TicketResponse::class, 'response_from', 'id');
     }
 }
