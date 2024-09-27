@@ -39,13 +39,13 @@ Route::group(['middleware' => ['customer.auth']], function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-    Route::post('/login', [AdminAuthController::class, 'login'])->name('login');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login');
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
     Route::group(['middleware' => ['admin.auth']], function () {
         Route::post('/tickets/list', [AdminController::class, 'showTickets'])->name('admintickets.list');
         Route::get('/ticket-details/{ticket_id}', [AdminController::class, 'viewTicket'])->name('admintickets.show');
         Route::post('/tickets/response', [AdminController::class, 'storeResponse'])->name('admintickets.storeResponse');
-        
+
         Route::post('/tickets/update-status', [AdminController::class, 'updateStatus'])->name('admintickets.updateStatus');
     });
 });

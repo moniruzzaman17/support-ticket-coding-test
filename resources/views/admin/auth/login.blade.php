@@ -44,7 +44,7 @@
                 event.preventDefault(); 
 
                 $.ajax({
-                    url: '{{ route("login") }}',
+                    url: '{{ route("admin.login") }}',
                     type: 'POST',
                     data: $(this).serialize(),
                     success: function(response) {

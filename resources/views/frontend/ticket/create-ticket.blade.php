@@ -14,11 +14,11 @@
             <div class="row g-3 mb-3">
                 <div class="col">
                     <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
-                    <input type="text" id="name" class="form-control" name="name" value="{{ auth()->check() ? auth()->user()->name : old('name') }}" required="">
+                    <input type="text" id="name" class="form-control" name="name" value="{{ auth()->guard('customer')->check() ? auth()->guard('customer')->user()->name : old('name') }}" required="">
                 </div>
                 <div class="col">
                     <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                    <input type="email" id="email" class="form-control" name="email" value="{{ auth()->check() ? auth()->user()->email : old('email') }}" required="">
+                    <input type="email" id="email" class="form-control" name="email" value="{{ auth()->guard('customer')->check() ? auth()->guard('customer')->user()->email : old('email') }}" required="">
                 </div>
             </div>          
   
