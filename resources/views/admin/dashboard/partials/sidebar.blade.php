@@ -43,11 +43,6 @@
                         <i class="fas fa-home"></i> Home
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('open.ticket') }}" class="nav-link text-dark">
-                      <i class="fas fa-ticket-alt"></i> New Ticket
-                    </a>
-                </li>
             </ul>
         </div>
       </div>

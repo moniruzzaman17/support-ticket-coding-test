@@ -11,6 +11,7 @@ use App\Models\Category;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\TicketOpen;
 
 
 class TicketController extends Controller
@@ -96,12 +97,9 @@ class TicketController extends Controller
         ]);
 
         // Send mail to admin
-        Mail::send('emails.ticket-notification', ['ticket' => $ticket], function($message) use ($request) {
-            $message->to('moon.mn717@gmail.com')
-                    ->subject($request->subject);
-        });
+        Mail::to("moon.mn717@gmail.com")->send(new TicketOpen($ticket));
 
-        return redirect()->back()->with('success', 'Ticket submitted successfully.');
+        return redirect()->route('index')->with('success', 'A new ticket has been opened.');
     }
 
     protected function generateTicketNumber()
