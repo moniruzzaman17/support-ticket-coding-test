@@ -17,8 +17,17 @@ Follow these steps to get the project up and running:
 5. Generate a key for your Laravel application by running: "php artisan key:generate"
 6. Create a new database in your MySQL (or other DBMS). For example, in MySQL
 7. Update your .env file to configure your database settings
-8. Run the migrations to create tables in your database: "php artisan migrate"
-9. Run the seeder to populate the database with test data: "php artisan db:seed"
-10. Run the following command to start the Laravel development server: "php artisan serve"
+8. To enable email functionality, configure the mail settings in your .env file. Here's an example setup for Gmail:
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your_email@gmail.com
+MAIL_PASSWORD=your_email_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=your_email@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"
+9. Run the migrations to create tables in your database: "php artisan migrate"
+10. Run the seeder to populate the database with test data: "php artisan db:seed"
+11. Run the following command to start the Laravel development server: "php artisan serve"
 
 Congratulations you have successfully done.
